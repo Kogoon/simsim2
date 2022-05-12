@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<h1 class="fw-bold fs-1 mt-3 pt-3">로또 번호 뽑기 </h1>
+<h1 class="fw-bold fs-1 m-3 p-3">로또 번호 뽑기 </h1>
 
 {% if lotto_nums %}
     {% for num in lotto_nums %}
 
-        <p>{{ num }}</p>
+        <span class="dot primary">{{ num }}</span>
 
     {% endfor %}
-    
+
 {% else %}
 
     <h1> Error </h1>

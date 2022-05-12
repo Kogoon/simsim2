@@ -1,0 +1,44 @@
+.dot {
+    height: 50px;
+    width: 50px;
+    background-color: teal;
+    border-radius: 50%;
+    display: inline-block;
+    color: white;
+    vertical-align: middle;
+}
+.dot2 {
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot3 {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot4 {
+    height: 50px;
+    width: 50px;
+    background-color: pink;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot5 {
+    height: 50px;
+    width: 50px;
+    background-color: orange;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot6 {
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}

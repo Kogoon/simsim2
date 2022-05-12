@@ -1,14 +1,16 @@
 <div style="text-align: center;">
     <div>
-        <a href="#" class="text-dark text-decoration-none ">
-            <h1 class="">오늘 뭐 먹지?</h1>
+        <a href="#" class="text-dark text-decoration-none" >
+            <h1 style="margin: 2rem 0;" class="fw-bold fs-1">702호실 사람들</h1>
         </a>
     </div>
 
-    <nav class="nav">
+    <div>
+    <nav class="nav justify-content-center">
         <!--<a class="nav-link active" aria-current="page" href="#">점심메뉴</a>-->
         <a class="nav-link" href="{% url 'menuapp:menu' %}">점심메뉴</a>
         <a class="nav-link" href="{% url 'lottoapp:lotto' %}">로또번호</a>
         <a class="nav-link disabled">준비중</a>
     </nav>
+</div>
 </div>

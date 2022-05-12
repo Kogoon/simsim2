@@ -6,13 +6,15 @@ def lotto():
 
     lotto_nums = random.sample(range(1, 46), 6)
 
+    
+
     return lotto_nums
 
 # Create your views here.
 def get_lotto_nums(request):
     if request.method == "GET":
 
-        lotto_nums = lotto()
+        lotto_nums = sorted(lotto())
         
         data = {
             'lotto_nums': lotto_nums,
