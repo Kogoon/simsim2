@@ -21,7 +21,7 @@ urlpatterns = [
 
     #path('', name='home'),
 
-    path('menus/', include('menuapp.urls')),
+    path('', include('menuapp.urls')),
     path('lottos/', include('lottoapp.urls')),
 
     path('admin/', admin.site.urls),

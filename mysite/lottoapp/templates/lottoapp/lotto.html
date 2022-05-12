@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="fw-bold fs-1 mt-3 pt-3">로또 번호 뽑기 </h1>
+
+{% if lotto_nums %}
+    {% for num in lotto_nums %}
+
+        <p>{{ num }}</p>
+
+    {% endfor %}
+    
+{% else %}
+
+    <h1> Error </h1>
+
+{% endif %}
+
+
+
+{% endblock %}
