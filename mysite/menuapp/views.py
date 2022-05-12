@@ -4,7 +4,7 @@ import random
 
 # Create your views here.
 
-def index(request):
+def get_menu(request):
 
     if request.method == "GET":
             
