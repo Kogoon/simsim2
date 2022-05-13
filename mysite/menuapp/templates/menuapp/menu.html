@@ -23,6 +23,29 @@
     {% include 'menuapp/addmenu.html' %}
 </div>
 
+<div class=".container-lg mt-2 mp-2">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">##</th>
+            <th scope="col">Menu</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for i in menu_lists %}
+            <tr>
+                <th scope="row">{{ i.id }}</th>
+                <td>{{ i.content }}</td>
+                <td>{% include 'menuapp/deletemenu.html' with i=i %}</td>
+            </tr>
+            {% empty %}
+            <h5>등록된 음식이 없습니다!</h5>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!--
 <ul>
     <h3>등록된 음식</h3>
     {% for i in menu_lists %} 
@@ -32,5 +55,6 @@
         <h5>등록된 음식이 없습니다!</h5>
     {% endfor %}
 </ul> 
+-->
 
 {% endblock %}

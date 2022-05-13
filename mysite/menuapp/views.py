@@ -13,30 +13,34 @@ def get_menu(request):
     if request.method == "GET":
         '''homepage site'''
 
-        lunch_list = ["마라탕", "맥도날드", "인도카레", "육수당", "돈카츠", "서브웨이", "라멘", "초밥"]
-        menu = "".join(random.sample(lunch_list, k=1))
+        #lunch_list = ["마라탕", "맥도날드", "인도카레", "육수당", "돈카츠", "서브웨이", "라멘", "초밥"]
+        #menu = "".join(random.sample(lunch_list, k=1))
 
         all_menus = Menus.objects.all()
-        cursor = connection.cursor()
 
-        randomsql = "select content from menuapp_menus order by rand() limit 1"
-        result = cursor.execute(randomsql)
-        books = cursor.fetchall()
+        try:
+            cursor = connection.cursor()
 
-        connection.commit()
-        connection.close()
+            randomsql = "select content from menuapp_menus order by rand() limit 1"
+            
+            result = cursor.execute(randomsql)
+            menuss = cursor.fetchall()
 
-        print(books[0][0])
+            connection.commit()
+            connection.close()
 
-
-
-        #lunch_list.append(all_menus.content)
-
-        return render(request, 'menuapp/menu.html', 
-        {
-            'menu': books[0][0],
-            'menu_lists': all_menus,
-        })
+            return render(request, 'menuapp/menu.html',
+            {
+                'menu': menuss[0][0],
+                'menu_lists': all_menus,
+            })
+ 
+        except:
+            print("except")
+            return render(request, 'menuapp/menu.html', 
+            {
+                'menu': '등록된 메뉴가 없습니다.',
+            })
 
 
     elif request.mothod == "POST":
