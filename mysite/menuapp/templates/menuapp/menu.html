@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if menu %}
+    <h1 class="fw-bold fs-1 mt-3 pt-3">오늘 점심 뭐 먹지?</h1>
+    <p class="fs-1 p-4">{{ menu }}</p>
+{% else %}
+    <h1>먹고 싶은 것을 등록해 주세요!</h1>
+
+{% endif %}
+
+    <div class="m-2 p-2">
+    <a href="{% url 'menuapp:menu' %}">
+    <button type="button" class="btn btn-outline-primary">
+        다른거!</button>
+    </div>
+</a>
+
+<br>
+
+<div class="mb-2">
+    {% include 'menuapp/addmenu.html' %}
+</div>
+
+<ul>
+    <h3>등록된 음식</h3>
+    {% for i in menu_lists %} 
+    <li>{{i.content}}</li>
+    {% include 'menuapp/deletemenu.html' with i=i %}
+    {% empty %}
+        <h5>등록된 음식이 없습니다!</h5>
+    {% endfor %}
+</ul> 
+
+{% endblock %}
