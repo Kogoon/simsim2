@@ -35,7 +35,7 @@
         <tbody>
             {% for i in menu_lists %}
             <tr>
-                <th scope="row">{{ i.id }}</th>
+                <th scope="row">#</th>
                 <td>{{ i.content }}</td>
                 <td>{% include 'menuapp/deletemenu.html' with i=i %}</td>
             </tr>
